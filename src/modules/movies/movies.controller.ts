@@ -3,7 +3,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import {
   CREATE_MOVIE_FAV_TO_USER,
   DELETE_FAV_MOVIE,
-  FIND_ALL_FAV_MOVIES,
+  FIND_FAV_MOVIES,
   FIND_MOVIES,
   FIND_MOVIES_BY_ID,
 } from './movies.module';
@@ -26,8 +26,8 @@ export class MoviesController {
   }
 
   @Get('/favorites')
-  findAllFav(@Query() query: { user: string }) {
-    return this.client.send(FIND_ALL_FAV_MOVIES, query);
+  findAllFav(@Query() query: { userId: string }) {
+    return this.client.send(FIND_FAV_MOVIES, query);
   }
 
   @Post('/favorites')
