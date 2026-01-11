@@ -6,6 +6,8 @@ interface enviroments {
   MOVIE_SERVICE_FIND_MOVIES: string;
   MOVIE_SERVICE_PORT: number;
   MOVIE_SERVICE_HOST: string;
+  RECOMMENDATION_SERVICE_PORT: number;
+  RECOMMENDATION_SERVICE_HOST: string;
 }
 
 const envSchems = joi
@@ -14,6 +16,8 @@ const envSchems = joi
     MOVIE_SERVICE_FIND_MOVIES: joi.string().required(),
     MOVIE_SERVICE_HOST: joi.string().required(),
     MOVIE_SERVICE_PORT: joi.number().required(),
+    RECOMMENDATION_SERVICE_HOST: joi.string().required(),
+    RECOMMENDATION_SERVICE_PORT: joi.number().required(),
   })
   .unknown(true);
 
@@ -31,4 +35,6 @@ export const envs = {
   MOVIE_SERVICE_FIND_MOVIES: envsVars.MOVIE_SERVICE_FIND_MOVIES,
   MOVIE_SERVICE_HOST: envsVars.MOVIE_SERVICE_HOST,
   MOVIE_SERVICE_PORT: envsVars.MOVIE_SERVICE_PORT,
+  RECOMMENDATION_SERVICE_HOST: envsVars.RECOMMENDATION_SERVICE_HOST,
+  RECOMMENDATION_SERVICE_PORT: envsVars.RECOMMENDATION_SERVICE_PORT,
 };
